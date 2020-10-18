@@ -1,14 +1,14 @@
-package list;
+package linkedlistik.list;
 
 /**
  * author: Bikchurin Alexey, 9302;
  *
  *
  * How to use:
- * list.LinkedListik<Integer> listik = new Listik<>();
+ * linkedlistik.list.LinkedListik<Integer> listik = new Listik<>();
  * listik.pushBack(10);
  *
- * list.LinkedListik<Integer> listik1 = new Listik<>(listik);
+ * linkedlistik.list.LinkedListik<Integer> listik1 = new Listik<>(listik);
  *
  *
  * @param <T> type (For example: Integer, String, etc)

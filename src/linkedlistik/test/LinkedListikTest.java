@@ -1,10 +1,8 @@
-package test;
+package linkedlistik.test;
 
-import list.LinkedListik;
+import linkedlistik.list.LinkedListik;
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class LinkedListikTest {
 

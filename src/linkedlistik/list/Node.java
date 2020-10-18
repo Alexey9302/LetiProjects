@@ -1,4 +1,4 @@
-package list;
+package linkedlistik.list;
 
 public class Node<T> {
 
