@@ -4,7 +4,7 @@ import org.junit.Assert;
 import org.junit.Test;
 import simplealgo.algos.Algorithm;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class AlgorithmTest {
 
