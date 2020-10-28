@@ -52,25 +52,6 @@ public class BinaryHeap {
         return new BfsIterator(this);
     }
 
-    public Map<Integer, int[]> getGraph(){
-        Map<Integer, int[]> graph = new HashMap<>();
-        int l = 0;
-        int r = 1;
-
-        while(l <= list.size()){
-            for(int i = l; i < r; i++){
-                graph.put(list.get(i), new int[]{
-                        -1, -1
-                });
-            }
-
-            l = r;
-            r *= 2;
-        }
-
-        return graph;
-    }
-
     private void createHeap(){
         for(int i = list.size() / 2; i >= 0; i--){
             heap(i);

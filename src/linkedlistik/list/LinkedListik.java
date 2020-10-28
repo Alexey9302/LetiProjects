@@ -91,7 +91,7 @@ public class LinkedListik<T> {
         final Node<T> p = c.prev;
 
         if(p == null)
-            first = p;
+            first = n;
         else
             p.next = n;
 

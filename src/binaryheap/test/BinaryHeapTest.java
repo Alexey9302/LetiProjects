@@ -1,5 +1,8 @@
-package binaryheap.tree;
+package binaryheap.test;
 
+import binaryheap.tree.BfsIterator;
+import binaryheap.tree.BinaryHeap;
+import binaryheap.tree.DfsIterator;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,11 +48,9 @@ public class BinaryHeapTest {
         binaryHeap.insert(9);
         binaryHeap.insert(2);
 
-        boolean before = binaryHeap.contains(9);
-
         binaryHeap.remove(0);
 
-        boolean after = binaryHeap.contains(9) && before;
+        boolean after = binaryHeap.contains(9);
 
         assertFalse(after);
     }
