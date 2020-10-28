@@ -5,10 +5,10 @@ package linkedlistik.list;
  *
  *
  * How to use:
- * linkedlistik.list.LinkedListik<Integer> listik = new Listik<>();
+ * LinkedListik<Integer> listik = new Listik<>();
  * listik.pushBack(10);
  *
- * linkedlistik.list.LinkedListik<Integer> listik1 = new Listik<>(listik);
+ * LinkedListik<Integer> listik1 = new Listik<>(listik);
  *
  *
  * @param <T> type (For example: Integer, String, etc)
