@@ -56,12 +56,13 @@ public class LinkedListikTest {
     }
 
     @Test
-    public void at() {
+    public void remove() {
         LinkedListik<Integer> listik = new LinkedListik<>();
         listik.pushBack(43110);
-        int num = listik.at(0);
+        listik.remove(0);
+        int size = listik.getSize();
 
-        Assert.assertEquals(num, 43110);
+        Assert.assertEquals(size, 0);
     }
 
     @Test
