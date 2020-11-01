@@ -1,13 +1,13 @@
 package binaryheap.tree;
 
-import java.util.ArrayList;
+import linkedlistik.list.LinkedListik;
+
 import java.util.Iterator;
-import java.util.List;
 
 public class DfsIterator implements Iterator {
 
     private BinaryHeap list;
-    private List<Integer> listGraph = new ArrayList<>();
+    private LinkedListik<Integer> listGraph = new LinkedListik<>();
     private int index = -1;
 
     public DfsIterator(BinaryHeap list) {
@@ -22,7 +22,7 @@ public class DfsIterator implements Iterator {
 
     @Override
     public Integer next() {
-        return listGraph.get(++index);
+        return listGraph.at(++index);
     }
 
     @Override
@@ -40,7 +40,7 @@ public class DfsIterator implements Iterator {
         if(i >= list.size())
             return;
 
-        listGraph.add(list.getInList(i));
+        listGraph.pushBack(list.getInList(i));
         i = (i + 1) * 2;
 
         myDfs(i - 1);
