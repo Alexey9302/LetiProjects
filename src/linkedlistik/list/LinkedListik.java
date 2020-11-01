@@ -68,15 +68,15 @@ public class LinkedListik<T> {
     }
 
     public void insert(int index, T elem){
-        final Node<T> c = get(index);
-        final Node<T> p = c.prev;
-        final Node<T> newNode = new Node<>(p, elem, c);
-        c.prev = newNode;
+        final Node<T> current = get(index);
+        final Node<T> prev = current.prev;
+        final Node<T> newNode = new Node<>(prev, elem, current);
+        current.prev = newNode;
 
-        if(p == null)
+        if(prev == null)
             first = newNode;
         else
-            p.next = newNode;
+            prev.next = newNode;
 
         ++size;
     }
@@ -86,23 +86,23 @@ public class LinkedListik<T> {
     }
 
     public void remove(int index){
-        final Node<T> c = get(index);
-        final Node<T> n = c.next;
-        final Node<T> p = c.prev;
+        final Node<T> current = get(index);
+        final Node<T> next = current.next;
+        final Node<T> prev = current.prev;
 
-        if(p == null)
-            first = n;
+        if(prev == null)
+            first = next;
         else
-            p.next = n;
+            prev.next = next;
 
-        if(n == null)
-            last = p;
+        if(next == null)
+            last = prev;
         else
-            n.prev = p;
+            next.prev = prev;
 
-        c.value = null;
-        c.prev = null;
-        c.next = null;
+        current.value = null;
+        current.prev = null;
+        current.next = null;
 
         --size;
     }
@@ -141,28 +141,41 @@ public class LinkedListik<T> {
     public void insert(int index, LinkedListik<T> listik){
         checkListNull(listik);
 
-        final Node<T> lf = listik.get(0);
-        final Node<T> ll = listik.get(listik.size - 1);
+        final Node<T> listFirst = listik.get(0);
+        final Node<T> listLast = listik.get(listik.size - 1);
 
         if(index == size){
             final Node<T> c = get(index - 1);
-            last = ll;
-            c.next = lf;
+            last = listLast;
+            c.next = listFirst;
         } else {
-            final Node<T> c = get(index);
-            final Node<T> p = c.prev;
+            final Node<T> current = get(index);
+            final Node<T> prev = current.prev;
 
-            if(p == null)
-                first = lf;
+            if(prev == null)
+                first = listFirst;
             else
-                p.next = lf;
+                prev.next = listFirst;
 
-            lf.prev = p;
-            c.prev = ll;
-            ll.next = c;
+            listFirst.prev = prev;
+            current.prev = listLast;
+            listLast.next = current;
         }
 
         size += listik.getSize();
+    }
+
+    public boolean contains(T elem){
+        Node<T> elemFirst = first;
+
+        for(int i = 0; i < size; i++){
+            if(elemFirst.value == elem)
+                return true;
+
+            elemFirst = elemFirst.next;
+        }
+
+        return false;
     }
 
     public boolean isValidPosition(int index){

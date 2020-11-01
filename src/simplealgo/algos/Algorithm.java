@@ -9,19 +9,19 @@ public class Algorithm {
     private static final int MAX_VALUE_CHAR = 65536;
 
     public static int binarySearch(int[] nums, int elem){
-        int l = -1;
-        int r = nums.length;
+        int left = -1;
+        int right = nums.length;
 
-        while(l + 1 < r){
-            int mid = (l + r) / 2;
+        while(left + 1 < right){
+            int mid = (left + right) / 2;
 
             if(elem > nums[mid])
-                l = mid;
+                left = mid;
             else
-                r = mid;
+                right = mid;
         }
 
-        return r;
+        return right;
     }
 
     public static void quickSort(int[] nums){
@@ -86,19 +86,19 @@ public class Algorithm {
         return true;
     }
 
-    private static void sort(int[] nums, int l, int r){
-        if(l < r){
-            int q = partition(nums, l, r);
+    private static void sort(int[] nums, int left, int right){
+        if(left < right){
+            int q = partition(nums, left, right);
 
-            sort(nums, l, q);
-            sort(nums, q + 1, r);
+            sort(nums, left, q);
+            sort(nums, q + 1, right);
         }
     }
 
-    private static int partition(int[] nums, int l, int r){
-        int mid = nums[(l + r) / 2];
-        int i = l;
-        int j = r;
+    private static int partition(int[] nums, int left, int right){
+        int mid = nums[(left + right) / 2];
+        int i = left;
+        int j = right;
 
         while(i <= j){
             while(nums[i] < mid)
@@ -130,10 +130,10 @@ public class Algorithm {
         return min;
     }
 
-    private static int getMax(char[] nums){
+    private static int getMax(char[] symbols){
         int max = 0;
 
-        for(char s: nums) {
+        for(char s: symbols) {
             if (s > max)
                 max = s;
         }

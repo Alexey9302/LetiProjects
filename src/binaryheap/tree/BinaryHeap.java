@@ -1,9 +1,6 @@
 package binaryheap.tree;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import linkedlistik.list.LinkedListik;
 
 /**
  * In this project I decided to use bfs save format instead of graph,
@@ -12,14 +9,14 @@ import java.util.Map;
 
 public class BinaryHeap {
 
-    List<Integer> list = new ArrayList<>();
+    private LinkedListik<Integer> list = new LinkedListik<>();
 
     public void insert(int value){
-        list.add(value);
-        int i = list.size() - 1;
+        list.pushBack(value);
+        int i = list.getSize() - 1;
         int parent = (i - 1) / 2;
 
-        while(i > 0 && list.get(parent) < list.get(i)){
+        while(i > 0 && list.at(parent) < list.at(i)){
             swap(i, parent);
 
             i = parent;
@@ -37,11 +34,11 @@ public class BinaryHeap {
     }
 
     public int size(){
-        return list.size();
+        return list.getSize();
     }
 
     public int getInList(int index){
-        return list.get(index);
+        return list.at(index);
     }
 
     public DfsIterator getDfsIterator(){
@@ -53,24 +50,24 @@ public class BinaryHeap {
     }
 
     private void createHeap(){
-        for(int i = list.size() / 2; i >= 0; i--){
+        for(int i = list.getSize() / 2; i >= 0; i--){
             heap(i);
         }
     }
 
     private void heap(int i){
-        int l, r, m;
+        int left, right, m;
 
         while(true){
-            l = 2 * i + 1;
-            r = l + 1;
+            left = 2 * i + 1;
+            right = left + 1;
             m = i;
 
-            if(l < list.size() && list.get(l) > list.get(m))
-                m = l;
+            if(left < list.getSize() && list.at(left) > list.at(m))
+                m = left;
 
-            if(r < list.size() && list.get(r) > list.get(m))
-                m = r;
+            if(right < list.getSize() && list.at(right) > list.at(m))
+                m = right;
 
             if(m == i)
                 break;
@@ -81,8 +78,8 @@ public class BinaryHeap {
     }
 
     private void swap(int i, int j){
-        int temp = list.get(i);
-        list.set(i, list.get(j));
+        int temp = list.at(i);
+        list.set(i, list.at(j));
         list.set(j, temp);
     }
 }
