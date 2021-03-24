@@ -1,8 +1,8 @@
-package simplealgo.test;
+package sem3.simplealgo.test;
 
 import org.junit.Assert;
 import org.junit.Test;
-import simplealgo.algos.Algorithm;
+import sem3.simplealgo.algos.Algorithm;
 
 import static org.junit.Assert.assertTrue;
 

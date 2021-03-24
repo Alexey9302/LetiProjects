@@ -1,4 +1,4 @@
-package simplealgo.algos;
+package sem3.simplealgo.algos;
 
 /**
  * Variant: 2, tasks: 1, 2, 4, 5, 6

@@ -1,4 +1,4 @@
-package linkedlistik.list;
+package sem3.linkedlistik.list;
 
 public class Node<T> {
 

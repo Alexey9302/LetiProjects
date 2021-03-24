@@ -1,13 +1,13 @@
-package binaryheap.tree;
+package sem3.binaryheap.tree;
 
-import linkedlistik.list.LinkedListik;
+import sem3.linkedlistik.list.LinkedListik;
 
 import java.util.Iterator;
 
 public class DfsIterator implements Iterator {
 
-    private BinaryHeap list;
-    private LinkedListik<Integer> listGraph = new LinkedListik<>();
+    private final BinaryHeap list;
+    private final LinkedListik<Integer> listGraph = new LinkedListik<>();
     private int index = -1;
 
     public DfsIterator(BinaryHeap list) {

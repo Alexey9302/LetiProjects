@@ -1,4 +1,6 @@
-package linkedlistik.list;
+package sem3.linkedlistik.list;
+
+import java.util.Iterator;
 
 /**
  * author: Bikchurin Alexey, 9302;
@@ -14,7 +16,7 @@ package linkedlistik.list;
  * @param <T> type (For example: Integer, String, etc)
  */
 
-public class LinkedListik<T> {
+public class LinkedListik<T> implements Iterable<T> {
 
     private int size = 0;
 
@@ -201,5 +203,10 @@ public class LinkedListik<T> {
     private void checkListNull(LinkedListik<T> listik){
         if(listik == null || listik.getSize() == 0)
             throw new NullPointerException();
+    }
+
+    @Override
+    public Iterator<T> iterator() {
+        return new ListikIterator<>(this);
     }
 }

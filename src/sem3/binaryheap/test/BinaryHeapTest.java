@@ -1,10 +1,10 @@
-package binaryheap.test;
+package sem3.binaryheap.test;
 
-import binaryheap.tree.BfsIterator;
-import binaryheap.tree.BinaryHeap;
-import binaryheap.tree.DfsIterator;
 import org.junit.Assert;
 import org.junit.Test;
+import sem3.binaryheap.tree.BfsIterator;
+import sem3.binaryheap.tree.BinaryHeap;
+import sem3.binaryheap.tree.DfsIterator;
 
 import static org.junit.Assert.assertFalse;
 
@@ -12,6 +12,7 @@ public class BinaryHeapTest {
 
     @Test
     public void insert() {
+        
         BinaryHeap binaryHeap = new BinaryHeap();
         binaryHeap.insert(1);
         binaryHeap.insert(5);
@@ -54,7 +55,7 @@ public class BinaryHeapTest {
 
         assertFalse(after);
     }
-
+    
     @Test
     public void getDfsIterator() {
         BinaryHeap binaryHeap = new BinaryHeap();

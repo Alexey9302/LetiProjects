@@ -1,6 +1,6 @@
-package binaryheap.tree;
+package sem3.binaryheap.tree;
 
-import linkedlistik.list.LinkedListik;
+import sem3.linkedlistik.list.LinkedListik;
 
 /**
  * In this project I decided to use bfs save format instead of graph,

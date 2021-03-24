@@ -1,8 +1,8 @@
-package linkedlistik.test;
+package sem3.linkedlistik.test;
 
-import linkedlistik.list.LinkedListik;
 import org.junit.Assert;
 import org.junit.Test;
+import sem3.linkedlistik.list.LinkedListik;
 
 public class LinkedListikTest {
 

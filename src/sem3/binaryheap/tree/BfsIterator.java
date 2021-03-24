@@ -1,4 +1,4 @@
-package binaryheap.tree;
+package sem3.binaryheap.tree;
 
 import java.util.Iterator;
 
